@@ -8,10 +8,9 @@ const express = require('express'),
     errorController = require('./server/error');
 //~data locals
     
-//~body parser
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+//~url encoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //~statics
 app.use('/', express.static(__dirname + '/front/public'));
 //~motor
